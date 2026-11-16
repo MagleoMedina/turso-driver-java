@@ -1,0 +1,10 @@
+target/
+*.class
+.idea/
+*.iml
+.vscode/
+.secrets/
+backups/
+cierre.db
+cierre.db-*
+*.log

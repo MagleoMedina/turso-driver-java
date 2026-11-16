@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:turso:${TURSO_URL}
+    driver-class-name: io.turso.jdbc.TursoDriver
+    password: ${TURSO_TOKEN}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 1
+  sql:
+    init:
+      mode: always
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          use_get_generated_keys: true
+  threads:
+    virtual:
+      enabled: true
+
+logging:
+  level:
+    io.turso: INFO
+    org.hibernate.SQL: INFO
