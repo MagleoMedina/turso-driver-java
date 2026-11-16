@@ -5,6 +5,7 @@ target/
 .vscode/
 .secrets/
 backups/
+.codegraph/
 cierre.db
 cierre.db-*
 *.log

@@ -35,6 +35,8 @@ class TursoJdbcIT {
 
   @BeforeAll
   static void requireCredentials() {
+    assumeTrue("true".equalsIgnoreCase(System.getenv("TURSO_IT")),
+        "Set TURSO_IT=true to run integration tests against a real database");
     String url = System.getenv("TURSO_URL");
     token = System.getenv("TURSO_TOKEN");
     assumeTrue(url != null && !url.isBlank() && token != null && !token.isBlank(),

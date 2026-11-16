@@ -107,10 +107,8 @@ No hace falta starter: Hikari, Actuator y Spring Data se configuran solos.
 # unitarias (sin red)
 mvn -pl turso-jdbc test
 
-# integración real (crea/borra filas en it_turso_jdbc e it_demo_note)
-export TURSO_URL=libsql://...
-export TURSO_TOKEN=...
-mvn verify
+# integración real (opt-in; crea/borra filas en it_turso_jdbc e it_demo_note)
+TURSO_IT=true TURSO_URL=libsql://... TURSO_TOKEN=... mvn verify
 ```
 
 Los IT se saltan solos si faltan las variables. `examples/spring-demo` demuestra
